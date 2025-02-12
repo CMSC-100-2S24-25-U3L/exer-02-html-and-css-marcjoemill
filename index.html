@@ -4,20 +4,201 @@
         <title> Marc's Personal Potfolio</title>
         
         <style>
+            body{
+                background-color: #1e1e1e;
+                background-image: url("images/citylights_bg.jpg");
+                margin: 0;
+                padding: 0;
+                background-size: contain; 
+                 /*  background-position: center; Centers the background */
+                background-repeat: repeat; 
+                
+                position: relative;           
+  
+            }
+
+            body::before {
+                content: "";
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(40, 40, 40, 0.8); 
+                z-index: -1; 
+            }
+
+            .site{ /* ALL CONTENTS */
+                display: flex;
+                flex-direction: column;
+                justify-content: center; 
+                gap: 5%;
+                overflow-y: auto; 
+                
+                
+            }
+
+            
+            .topnav{ /* NAVIGATION BAR */
+                display: flex;
+                gap: 1%;
+                justify-content: flex-end;
+                align-items: center;
+                background-color:#1e1e1e ;
+                padding-right: 1%;
+                padding-top: 2%;
+                padding-bottom: 2%;
+            }
+
+            .topnav a { /* NAVIGATION BAR CONTENT*/
+                text-decoration: none;  
+                color: white;
+                font-size: 20px; 
+                padding: 10px 15px; 
+                transition: color 0.3s ease-in-out; /* Smooth transition effect */
+            }
+
+            .home { /* HOME */
+                display: flex;
+                flex-direction: column;
+
+                justify-content: flex-start;
+
+                text-align: center;
+                color: white; 
+                font-size: 72px;
+                font-weight: bold;
+                justify-content: center; 
+                align-items: center; 
+                
+
+                padding: 5%;
+
+                
+            }
+
+            .description{
+                color: white;
+                font-size: 28px;
+                font-weight: 400;
+                text-align: center; 
+                padding-top: 10%;
+                padding-bottom: 5%;
+                padding-left: 10%;
+                padding-right: 10%;
+                background-color: #1e1e1e;
+                
+                
+                
+            }
+
+            .my-photo{
+                width: 300px;
+                height: 300px;
+                border-radius: 50%;
+                object-fit: cover;
+            }
+
+            .portfolio{
+                display: flex;
+                flex-direction: row;
+                
+                width: 100%; /* Ensures enough space */
+                justify-content:space-evenly;
+                align-items: center;
+                
+               color: #1e1e1e;
+               font-size: 54px;
+               font-weight: bold;
+               background-color: rgb(237, 229, 229);
+                padding: 3%;
+            }
+
+            .content-languages, .content-skills{
+                font-size: 24px;
+                font-weight: 400;
+            }
+
+            .projects{
+                
+                background-color: #1e1e1e;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                color: rgb(237, 229, 229);
+                font-size: 54px;
+                font-weight: bold;
+            }
+
+            .project-container{
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                gap: 50px;   
 
 
-
+            }
+            .project1-photo, .project2-photo, .project3-photo{
+                width: 600px;
+                object-fit: contain;
+            }
 
         </style>
     </head>
 
     <body>
-        <div class="topnav">
-            <a class="active" href="#home">HOME</a>
-            <a href="#news">PORTFOLIO</a>
-            <a href="#contact">CONTACT</a>
-        </div>
 
+        <div class="site">
+
+            <div class="topnav">
+                <a class="active" href="#home"> HOME </a>
+                <a href="#portfolio">PORTFOLIO</a>
+                <a href="#contact">CONTACT</a>
+            </div>
+    
+
+    
+            <div class="home"> 
+                <img class="my-photo" src="images/m1.jpg" alt="Photo of Marc">
+                <p class="name"> Marc Joemil Mendoza</p>
+            </div>
+                
+
+            <div class="description">
+                <p>"A graduate from the University of the Philippines Los Banos, with a degree in BS Computer Science. Interests include web development and game development. A hardworking and passionate individual who is ready to take on challenges, not afraid to exhibit leadership and take accountability"</p>
+            </div>
+            
+            <div id="portfolio" class="portfolio">
+                <div class="skills">
+                    <p>Skills</p>
+                    <p class="content-skills">Collaboration, Flexible, Organizational Skills, Time Management</p>
+                </div>
+                <div class="languages">
+                    <p>Languages</p>
+                    <p class="content-languages">Proficient in C, CSS, Dart, HTML, Java, Python, R</p>
+                </div>
+            </div>
+
+            <div class="projects">
+                <p>Projects</p>
+
+                <div class="project-container">
+                    <div class="project1">
+                        <img class="project1-photo" src="images/proj1.jpg" alt="">
+                    </div>
+                    <div class="project2">
+                        <img class="project2-photo" src="images/proj2.jpg" alt="">
+                    </div>
+                    <div class="project3">
+                        <img class="project3-photo"src="images/proj3.jpg" alt="">
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
         
     </body>
 
