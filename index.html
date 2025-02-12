@@ -10,14 +10,14 @@
                 margin: 0;
                 padding: 0;
                 background-size: contain; 
-                 /*  background-position: center; Centers the background */
                 background-repeat: repeat; 
-                
+                overflow-x: hidden;
+                width: 100%;
                 position: relative;           
   
             }
 
-            body::before {
+            body::before { /* OVERLAY */
                 content: "";
                 position: fixed;
                 top: 0;
@@ -38,6 +38,20 @@
                 
             }
 
+            .projects a { 
+                text-decoration: none;
+                color: white; 
+                font-size: 16px;
+                padding: 10px 15px;
+                background-color: #333;
+                border-radius: 5px;
+                display: inline-block;
+                margin-bottom: 2%;
+            }
+
+            .projects a:hover {
+                background-color: #555;
+            }
             
             .topnav{ /* NAVIGATION BAR */
                 display: flex;
@@ -55,7 +69,7 @@
                 color: white;
                 font-size: 20px; 
                 padding: 10px 15px; 
-                transition: color 0.3s ease-in-out; /* Smooth transition effect */
+                transition: color 0.3s ease-in-out; 
             }
 
             .home { /* HOME */
@@ -103,9 +117,10 @@
                 display: flex;
                 flex-direction: row;
                 
-                width: 100%; /* Ensures enough space */
+                width: 100%; 
                 justify-content:space-evenly;
                 align-items: center;
+                max-width: 100%;
                 
                color: #1e1e1e;
                font-size: 54px;
@@ -129,6 +144,8 @@
                 color: rgb(237, 229, 229);
                 font-size: 54px;
                 font-weight: bold;
+                text-decoration: none;  
+
             }
 
             .project-container{
@@ -143,7 +160,37 @@
             .project1-photo, .project2-photo, .project3-photo{
                 width: 600px;
                 object-fit: contain;
+                max-width: 100%;
             }
+
+            .project1, .project2, .project3{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-size: 24px;
+                font-weight: 400;
+                padding-top: 5%;
+                padding-left: 10%;
+                padding-right: 10%;
+                padding-bottom: 7%;
+
+            }
+
+            .project1-label, .project2-label, .project3-label{
+                padding: 4%;
+                text-align: left;
+            }
+
+            .contact{
+                display: flex;
+                background-color: rgb(237, 229, 229);
+                color: #1e1e1e;
+                font-weight: 700;
+                justify-content: center;
+                gap: 5%;
+
+            }
+
 
         </style>
     </head>
@@ -160,8 +207,8 @@
     
 
     
-            <div class="home"> 
-                <img class="my-photo" src="images/m1.jpg" alt="Photo of Marc">
+            <div id="home" class="home"> 
+                <img class="my-photo" src="images/marcmendoza.jpg" alt="Photo of Marc">
                 <p class="name"> Marc Joemil Mendoza</p>
             </div>
                 
@@ -186,16 +233,28 @@
 
                 <div class="project-container">
                     <div class="project1">
-                        <img class="project1-photo" src="images/proj1.jpg" alt="">
+                        <img class="project1-photo" src="images/proj1.jpg" alt="Project 1">
+                        <p class="project1-label">A diet solver website application that calculates for the estimate cost of a diet plan based from user selected foods, including a breakdown of food partition, using R language</p>
                     </div>
                     <div class="project2">
-                        <img class="project2-photo" src="images/proj2.jpg" alt="">
+                        <p class="project2-label">An employee management system capable of keeping track of employee information and appointments, that features automatic sorting system, loading and saving data using C language</p>
+                        <img class="project2-photo" src="images/proj2.jpg" alt="Project 2">
                     </div>
                     <div class="project3">
-                        <img class="project3-photo"src="images/proj3.jpg" alt="">
+                        <img class="project3-photo"src="images/proj3.jpg" alt="Project 3">
+                        <p class="project3-label">A 1v1 fighting game with muliple playable characters, which features enemy orientation tracking, hitbox checking, and character padding, with the use of Java</p>
                     </div>
                 </div>
 
+                <a href="#home">Back to top</a>
+
+            </div>
+
+            <div id="contact" class="contact">
+                <p>Email: mpmendoza6@up.edu.ph</p>
+                <p>LinkedIn: Marc Joemil Mendoza</p>
+                <p>Contact no.: 09695589099</p>
+                
             </div>
 
         </div>
